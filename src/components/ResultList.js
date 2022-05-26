@@ -5,6 +5,10 @@ import ResultsDetail from './ResultsDetail';
 
 const ResultList = ({ title, results }) => {
   const navigation = useNavigation();
+
+  if (!results.length) {
+    return null;
+  }
   return (
     <View style={styles.container}>
       <Text style={styles.titleStyle}>{title}</Text>
@@ -14,7 +18,7 @@ const ResultList = ({ title, results }) => {
         data={results}
         keyExtractor={result => result.id}
         renderItem={({ item }) => {
-          return <TouchableOpacity onPress={() => navigation.navigate('ResultsShow')}>
+          return <TouchableOpacity onPress={() => navigation.navigate('ResultsShow', { id: item.id })}>
             <ResultsDetail item={item} />
           </TouchableOpacity>
         }}

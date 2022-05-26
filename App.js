@@ -10,7 +10,7 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Search" component={SearchScreen} options={{ title: 'Business Search' }} />
-        <Stack.Screen name="ResultsShow" component={ResultsShowScreen} options={{ title: 'Results Show Screen' }} />
+        <Stack.Screen name="ResultsShow" component={ResultsShowScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
